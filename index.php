@@ -4,6 +4,7 @@ $scriptAssets = [];
 
 session_start();
 
+$serverName = $_SERVER["HTTP_HOST"];
 $documentRoot = $_SERVER["DOCUMENT_ROOT"];
 $uploadFolder = $documentRoot."/uploads";
 $request = $_SERVER["REQUEST_URI"];

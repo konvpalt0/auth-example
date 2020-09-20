@@ -73,7 +73,7 @@ if (startsWith($request, '/api/users/')) {
             $file_path = upload_image($_FILES["picture"], $folder);
             $file_path_exploded = explode('/', $file_path);
             $file_name = $file_path_exploded[count($file_path_exploded) - 1];
-            $file_url = "http://auth.ru/uploads/".$file_name;
+            $file_url = "//$serverName/uploads/".$file_name;
             $attributes["image"] = $file_url;
         }
 
