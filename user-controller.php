@@ -69,7 +69,7 @@ if (startsWith($request, '/api/users/')) {
         $attributes = [];
 
         if (!empty($_FILES)) {
-            $folder = "/home/konvpalto/PhpstormProjects/auth-example/uploads";
+            $folder = $uploadFolder;
             $file_path = upload_image($_FILES["picture"], $folder);
             $file_path_exploded = explode('/', $file_path);
             $file_name = $file_path_exploded[count($file_path_exploded) - 1];

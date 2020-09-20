@@ -4,6 +4,8 @@ $scriptAssets = [];
 
 session_start();
 
+$documentRoot = $_SERVER["DOCUMENT_ROOT"];
+$uploadFolder = $documentRoot."/uploads";
 $request = $_SERVER["REQUEST_URI"];
 $request = explode("?", $request);
 $query_params = $request[1];
