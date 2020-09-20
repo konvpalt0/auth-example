@@ -1,0 +1,12 @@
+{
+  "name": "konvpalto/auth-example",
+  "autors": [
+    {
+      "name": "Your Name",
+      "email": "you@example.com"
+    }
+  ],
+  "require": {
+    "ext-mbstring": "*"
+  }
+}

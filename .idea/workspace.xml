@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77ef3fc9-08de-4af5-bcd6-3bcfa27887ec" name="Default Changelist" comment="2">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +62,7 @@
       <workItem from="1600413239235" duration="7974000" />
       <workItem from="1600501276668" duration="8965000" />
       <workItem from="1600591452127" duration="2029000" />
-      <workItem from="1600597506414" duration="1167000" />
+      <workItem from="1600597506414" duration="1844000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1600591546671</created>
@@ -92,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600598320313</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2">
+      <created>1600598680117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600598680117</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,10 +128,10 @@
       <screen x="72" y="27" width="1368" height="873" />
     </state>
     <state x="459" y="265" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1368.873@72.27.1368.873" timestamp="1600598643075" />
-    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1600598321986">
+    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1600598681786">
       <screen x="72" y="27" width="1368" height="873" />
     </state>
-    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1368.873@72.27.1368.873" timestamp="1600598321986" />
+    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1368.873@72.27.1368.873" timestamp="1600598681786" />
     <state x="537" y="378" width="438" height="184" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600593419210">
       <screen x="72" y="27" width="1368" height="873" />
     </state>
