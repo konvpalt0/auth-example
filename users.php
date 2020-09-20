@@ -40,7 +40,7 @@ function getUser($uuid)
     return null;
 }
 
-function getUsers($limit, $page)
+function getUsers($limit = 5, $page = 0)
 {
     if (file_exists(USERS_FILE)) {
         $result = json_decode(file_get_contents(USERS_FILE), true);

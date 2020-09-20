@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77ef3fc9-08de-4af5-bcd6-3bcfa27887ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/user-card-component.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/user-edit-component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/user-card-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/user-edit-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/users-component.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/users-list-component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/user-controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-file.json" beforeDir="false" afterPath="$PROJECT_DIR$/users-file.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility.php" beforeDir="false" afterPath="$PROJECT_DIR$/utility.php" afterDir="false" />
+    <list default="true" id="77ef3fc9-08de-4af5-bcd6-3bcfa27887ec" name="Default Changelist" comment="2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx_app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx_app.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +32,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hfrxobThGhMPLz6hffa3CRlMVc" />
@@ -50,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -62,7 +61,16 @@
       <updated>1600413237490</updated>
       <workItem from="1600413239235" duration="7974000" />
       <workItem from="1600501276668" duration="8965000" />
+      <workItem from="1600591452127" duration="2029000" />
     </task>
+    <task id="LOCAL-00001" summary="2">
+      <created>1600591546671</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600591546671</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,7 +88,21 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2" />
+    <MESSAGE value="f" />
+    <MESSAGE value="fx" />
+    <option name="LAST_COMMIT_MESSAGE" value="fx" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1600593551619">
+      <screen x="72" y="27" width="1368" height="873" />
+    </state>
+    <state x="351" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1368.873@72.27.1368.873" timestamp="1600593551619" />
+    <state x="537" y="378" width="438" height="184" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600593419210">
+      <screen x="72" y="27" width="1368" height="873" />
+    </state>
+    <state x="537" y="378" width="438" height="184" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1368.873@72.27.1368.873" timestamp="1600593419210" />
     <state x="419" y="214" key="search.everywhere.popup" timestamp="1600417842003">
       <screen x="72" y="27" width="1368" height="873" />
     </state>
