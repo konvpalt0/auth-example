@@ -1,7 +1,7 @@
 <?php
 
 if ($request == '/users') {
-    $scriptAssets[] = '/assets/js/users-component.js';
+    $scriptAssets[] = '/assets/js/users-list-component.js';
     include 'layout.php';
 
     die();
@@ -21,8 +21,8 @@ if (startsWith($request, '/users/')) {
 
     $user = getUser($userUuid);
 
-    array_push($scriptAssets, '/assets/js/user-card-component.js');
-    array_push($scriptAssets, '/assets/js/user-card-reducer.js');
+    array_push($scriptAssets, '/assets/js/user-edit-component.js');
+    array_push($scriptAssets, '/assets/js/user-edit-reducer.js');
 
     include 'layout.php';
 
@@ -31,7 +31,9 @@ if (startsWith($request, '/users/')) {
 
 if ($request == '/api/users') {
     if ($requestMethod == 'GET') {
-        echo json_encode(getUsers());
+        $limit = filter_var($_GET["limit"], FILTER_VALIDATE_INT);
+        $page = filter_var($_GET["page"], FILTER_VALIDATE_INT);
+        echo json_encode(getUsers($limit, $page));
         die();
     }
 
@@ -66,6 +68,15 @@ if (startsWith($request, '/api/users/')) {
 
         $attributes = [];
 
+        if (!empty($_FILES)) {
+            $folder = "/home/konvpalto/PhpstormProjects/auth-example/uploads";
+            $file_path = upload_image($_FILES["picture"], $folder);
+            $file_path_exploded = explode('/', $file_path);
+            $file_name = $file_path_exploded[count($file_path_exploded) - 1];
+            $file_url = "http://auth.ru/uploads/".$file_name;
+            $attributes["image"] = $file_url;
+        }
+
         if (!empty($login)) {
             $attributes['login'] = $login;
         }
@@ -80,8 +91,8 @@ if (startsWith($request, '/api/users/')) {
         } else {
             $active = false;
         }
-        $attributes['active'] = $active;
 
+        $attributes['active'] = $active;
         editUser($userUuid, $attributes);
 
         die();

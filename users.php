@@ -40,11 +40,12 @@ function getUser($uuid)
     return null;
 }
 
-function getUsers()
+function getUsers($limit, $page)
 {
     if (file_exists(USERS_FILE)) {
-        $result = file_get_contents(USERS_FILE);
-        return json_decode($result, true);
+        $result = json_decode(file_get_contents(USERS_FILE), true);
+        $result = array_slice($result, $page * $limit, $limit);
+        return $result;
     }
     throw new Error('users-file not exist');
 

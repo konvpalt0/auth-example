@@ -4,64 +4,69 @@ $scriptAssets = [];
 
 session_start();
 
-$request = $_SERVER['REQUEST_URI'];
-$requestMethod = $_SERVER['REQUEST_METHOD'];
+$request = $_SERVER["REQUEST_URI"];
+$request = explode("?", $request);
+$query_params = $request[1];
+$_GET = [];
+parse_str($query_params, $_GET);
+$request = $request[0];
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if (is_null($_SESSION['currentUser']) && $request != '/login' && $request != '/auth') {
+if (!isset($_SESSION["currentUser"]) && $request != "/login" && $request != "/auth") {
     header("Location: /login");
     die();
 }
 
-include "utility.php";
-include "users.php";
-include "user-controller.php";
+include "./utility.php";
+include "./users.php";
+include "./user-controller.php";
 
-if ($request == '/login') {
+if ($request == "/login") {
     include "login.html";
     die();
 }
 
-if ($request == '/logout') {
+if ($request == "/logout") {
     session_destroy();
     header("Location: /login");
     die();
 }
 
-if ($request == '/about') {
+if ($request == "/about") {
     $handlerRequest = function() {
-        echo 'about';
+        echo "about";
     };
-    include 'layout.php';
+    include "layout.php";
     die();
 }
 
-if ($request == '/profile') {
+if ($request == "/profile") {
     $handlerRequest = function() {
-        echo 'profile';
+        echo "profile";
     };
-    include 'layout.php';
+    include "layout.php";
     die();
 }
 
-if ($request == '/auth') {
+if ($request == "/auth") {
     $login = filter_var($_POST["login"], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
     foreach (getUsers() as $user) {
-        if (!($user['active'] === false) && $user['login'] == $login && password_verify($password, $user['password'])) {
-            $_SESSION['currentUser'] = $user;
+        if ($user["active"] && $user["login"] == $login && password_verify($password, $user["password"])) {
+            $_SESSION["currentUser"] = $user;
         }
     }
-    header('Location: /');
+    header("Location: /");
 
     die();
 }
 
 if ($request == '/') {
     $handlerRequest = function() {
-        echo $_SESSION['currentUser']['login'];
+        echo $_SESSION["currentUser"]["login"];
     };
-    include 'layout.php';
+    include "layout.php";
     die();
 }
 
