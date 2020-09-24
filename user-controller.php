@@ -31,9 +31,9 @@ if (startsWith($request, '/users/')) {
 
 if ($request == '/api/users') {
     if ($requestMethod == 'GET') {
-        $limit = filter_var($_GET["limit"], FILTER_VALIDATE_INT);
-        $page = filter_var($_GET["page"], FILTER_VALIDATE_INT);
-        echo json_encode(getUsers($limit, $page));
+  //      $limit = filter_var($_GET["limit"], FILTER_VALIDATE_INT);
+  //      $page = filter_var($_GET["page"], FILTER_VALIDATE_INT);
+        echo json_encode(getUsers());
         die();
     }
 
@@ -41,7 +41,7 @@ if ($request == '/api/users') {
         $login = filter_var($_POST["login"], FILTER_SANITIZE_STRING);
         $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
         $password = password_hash($password, PASSWORD_BCRYPT);
-        echo createUser($login, $password);
+        
         die();
     }
 }
@@ -49,6 +49,7 @@ if ($request == '/api/users') {
 if (startsWith($request, '/api/users/')) {
     $path = explode('/', $request);
     $userUuid = $path[count($path) - 1];
+
     $user = getUser($userUuid);
 
     if (is_null($user)) {
@@ -57,7 +58,7 @@ if (startsWith($request, '/api/users/')) {
     }
 
     if ($requestMethod == 'GET') {
-        echo json_encode(getUser($userUuid));
+        echo json_encode($user);
         die();
     }
 
@@ -82,7 +83,6 @@ if (startsWith($request, '/api/users/')) {
         }
 
         if (!empty($password)) {
-            $password = password_hash($password, PASSWORD_BCRYPT);
             $attributes['password'] = $password;
         }
 

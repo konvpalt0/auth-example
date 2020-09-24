@@ -14,7 +14,7 @@ let innerHTML = `
     
     <div class="form-group">
         <label for="exampleInputUuid" >Uuid</label>
-        <input type="uuid" class="form-control" name="uuid" id="exampleInputUuid" aria-describedby="emailHelp" readonly>
+        <input type="uuid" class="form-control" name="id" id="exampleInputUuid" aria-describedby="emailHelp" readonly>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Login</label>
@@ -52,9 +52,10 @@ container.innerHTML = innerHTML;
 
 
 $.get(`http://auth.ru/api/users/${uuid}`, {}, function (user) {
-    container.querySelector('#exampleInputUuid').value = user.uuid;
+    user = JSON.parse(user);
+    container.querySelector('#exampleInputUuid').value = user.id;
     container.querySelector('#exampleInputEmail1').value = user.login;
     container.querySelector('#exampleCheck1').checked = user.active;
-}, 'json');
+});
 
 document.body.append(container);

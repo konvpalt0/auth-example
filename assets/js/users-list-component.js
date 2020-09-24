@@ -1,7 +1,7 @@
 let container = document.createElement('div');
 container.style.marginTop = '100 px';
 
-$.get("api/users", {limit: 9, page: 0}, function(users) {
+$.get("api/users", function(users) {
     users = JSON.parse(users);
     let innerHTML = '';
     innerHTML = `
@@ -17,7 +17,7 @@ $.get("api/users", {limit: 9, page: 0}, function(users) {
                     <h5 class="card-title"> ${user.login} </h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                         content.</p>
-                    <a href="http://auth.ru/users/${user.uuid}" class="btn btn-primary">Settings</a>
+                    <a href="http://auth.ru/users/${user.id}" class="btn btn-primary">Settings</a>
                 </div>
             </div>
     `;

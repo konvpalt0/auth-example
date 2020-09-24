@@ -8,11 +8,6 @@ $serverName = $_SERVER["HTTP_HOST"];
 $documentRoot = $_SERVER["DOCUMENT_ROOT"];
 $uploadFolder = $documentRoot."/uploads";
 $request = $_SERVER["REQUEST_URI"];
-$request = explode("?", $request);
-$query_params = $request[1];
-$_GET = [];
-parse_str($query_params, $_GET);
-$request = $request[0];
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if (!isset($_SESSION["currentUser"]) && $request != "/login" && $request != "/auth") {
@@ -20,6 +15,7 @@ if (!isset($_SESSION["currentUser"]) && $request != "/login" && $request != "/au
     die();
 }
 
+include "./db.php";
 include "./utility.php";
 include "./users.php";
 include "./user-controller.php";
@@ -55,11 +51,12 @@ if ($request == "/auth") {
     $login = filter_var($_POST["login"], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-    foreach (getUsers() as $user) {
-        if ($user["active"] && $user["login"] == $login && password_verify($password, $user["password"])) {
-            $_SESSION["currentUser"] = $user;
-        }
+    $user = findUser($login);
+
+    if ($user["active"] && $user["login"] == $login && password_verify($password, $user["password"])) {
+        $_SESSION["currentUser"] = $user;
     }
+
     header("Location: /");
 
     die();
